@@ -66,6 +66,7 @@ obj-$(CONFIG_INPUT_YEALINK)		+= yealink.o
 obj-$(CONFIG_BMP18X)			+= bmp18x-core.o
 obj-$(CONFIG_BMP18X_I2C)		+= bmp18x-i2c.o
 obj-$(CONFIG_SENSORS_MMC3416X)		+= mmc3416x.o
+obj-$(CONFIG_SENSORS_MMC3X30)		+= mmc3x30.o
 obj-$(CONFIG_SENSORS_MMA8X5X)	  	+= mma8x5x.o
 obj-$(CONFIG_SENSORS_STK3X1X)		+= stk3x1x.o
 obj-$(CONFIG_SENSORS_CAPELLA_CM36283)	+= cm36283.o
@@ -86,6 +87,7 @@ endif
 ifeq ($(CONFIG_BOSCH_BMA2X2_ENABLE_INT2),y)
 	EXTRA_CFLAGS += -DBMA2X2_ENABLE_INT2
 endif
+
 #yongzhong.cheng,2014/07/24,PR 724584: add proximity and light sensor config begin
 obj-$(CONFIG_SENSORS_TSL2772)	+= tsl277x.o
 #yongzhong.cheng,2014/07/24,PR 724584: add proximity and light sensor config end

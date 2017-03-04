@@ -31,6 +31,10 @@
 
 &soc {
 	sound-9335 {
+<<<<<<< HEAD
+=======
+		qcom,msm-mbhc-hphl-swh = <0>;
+>>>>>>> 9afde05... Merge remote-tracking branch 'caf/LA.BR.1.2.9_rb1.10' into cm-14.1
 		qcom,audio-routing =
 			"AIF4 VI", "MCLK",
 			"RX_BIAS", "MCLK",

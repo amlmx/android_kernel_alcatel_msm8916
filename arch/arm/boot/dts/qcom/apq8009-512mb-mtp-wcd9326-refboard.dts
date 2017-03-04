@@ -31,6 +31,10 @@
 
 &soc {
 	sound-9335 {
+<<<<<<< HEAD
+=======
+		qcom,msm-mbhc-hphl-swh = <0>;
+>>>>>>> 9afde05... Merge remote-tracking branch 'caf/LA.BR.1.2.9_rb1.10' into cm-14.1
 		qcom,audio-routing =
 			"AIF4 VI", "MCLK",
 			"RX_BIAS", "MCLK",
@@ -55,3 +59,43 @@
 		};
 	};
 };
+<<<<<<< HEAD
+=======
+
+&modem_adsp_mem {
+	reg = <0x0 0x88000000 0x0 0x02400000>;
+};
+
+&peripheral_mem {
+	reg = <0x0 0x8a400000 0x0 0x0500000>;
+};
+
+&i2c_4 {
+	smb1360_otg_supply: smb1360-chg-fg@14 {
+		compatible = "qcom,smb1360-chg-fg";
+		reg = <0x14>;
+		interrupt-parent = <&msm_gpio>;
+		interrupts = <58 8>;
+		pinctrl-names = "default";
+		pinctrl-0 = <&smb_int_default>;
+		qcom,charging-disabled;
+		qcom,empty-soc-disabled;
+		qcom,chg-inhibit-disabled;
+		qcom,float-voltage-mv = <4200>;
+		qcom,iterm-ma = <200>;
+		qcom,recharge-thresh-mv = <100>;
+		qcom,thermal-mitigation = <1500 700 600 0>;
+		regulator-name = "smb1360_otg_vreg";
+	};
+};
+
+&pm8916_chg {
+	status = "ok";
+	qcom,use-external-charger;
+};
+
+&pm8916_bms {
+	status = "ok";
+	qcom,disable-bms;
+};
+>>>>>>> 9afde05... Merge remote-tracking branch 'caf/LA.BR.1.2.9_rb1.10' into cm-14.1
