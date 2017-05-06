@@ -1078,7 +1078,7 @@ static void dwc3_prepare_trbs(struct dwc3_ep *dep, bool starting)
 					bool mpkt = false;
 
 					chain = false;
-					if (list_empty(&dep->request_list))
+					if (list_empty(&dep->request_list)) {
 						last_one = true;
 						goto start_trb_queuing;
 					}
@@ -1129,6 +1129,7 @@ start_trb_queuing:
 					break;
 			}
 			dbg_queue(dep->number, &req->request, trbs_left);
+
 			if (last_one)
 				break;
 		} else {
@@ -2454,9 +2455,6 @@ static int __dwc3_cleanup_done_trbs(struct dwc3 *dwc, struct dwc3_ep *dep,
 						dep->name);
 				status = -ECONNRESET;
 			}
-
-			if (last_one)
-				break;
 		} else {
 			dep->flags &= ~DWC3_EP_MISSED_ISOC;
 		}
