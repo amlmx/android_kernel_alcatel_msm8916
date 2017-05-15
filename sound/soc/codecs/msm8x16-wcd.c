@@ -3624,8 +3624,6 @@ static int msm8x16_wcd_codec_enable_micbias2(struct snd_soc_dapm_widget *w,
 		if (strnstr(w->name, internal2_text, 30)) {
 			msm8x16_notifier_call(codec,
 					WCD_EVENT_PRE_MICBIAS_2_OFF);
-		} else if (strnstr(w->name, internal3_text, strlen(w->name))) {
-			snd_soc_update_bits(codec, micb_int_reg, 0x2, 0x0);
 		} else if (strnstr(w->name, external2_text, 30)) {
 			/*
 			 * send micbias turn off event to mbhc driver and then
